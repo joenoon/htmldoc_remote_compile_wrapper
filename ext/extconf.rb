@@ -35,3 +35,5 @@ end
 FileUtils.rm_rf src_dir
 
 puts "===> Done compiling htmldoc."
+
+create_makefile 'htmldoc_remote_compile_wrapper'
