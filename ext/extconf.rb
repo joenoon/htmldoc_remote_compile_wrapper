@@ -12,10 +12,10 @@ patch_file = File.join(src_dir, "libpng_patch")
 FileUtils.rm_rf src_dir
 FileUtils.mkdir src_dir
 
-source_url = "http://ftp.easysw.com/pub/htmldoc/1.8.27/htmldoc-1.8.27-source.tar.gz"
+source_url = "https://joenoon-public.s3.amazonaws.com/htmldoc-1.8.27-source.tar.gz"
 # Fixes building with libpng-1.5, from upstream svn r1668 via Fedora
 # Remove at version 1.8.28. cf. https://github.com/mxcl/homebrew/issues/15915
-patch_url = "http://pkgs.fedoraproject.org/cgit/htmldoc.git/plain/htmldoc-1.8.27-libpng15.patch?h=f18"
+patch_url = "https://gist.github.com/joenoon/5733730/raw/4da9eca3b0ba0f3d1303769bdc408729b8654632/gistfile1.diff"
 
 puts "===> Downloading: #{source_url} to #{tgz_file}"
 
