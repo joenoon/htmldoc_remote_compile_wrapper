@@ -5,7 +5,6 @@ src_dir = File.join(root, 'src')
 bin_dir = File.join(root, 'bin')
 tgz_filename = "htmldoc-1.8.28-source.tar.gz"
 tgz_file = File.join(src_dir, tgz_filename)
-patch_filename = "htmldoc-1.8.28.patch"
 
 Dir.chdir(src_dir) do
   puts "===> Changing to directory: #{src_dir}"
