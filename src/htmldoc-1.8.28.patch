@@ -1,12 +1,20 @@
-https://raw.githubusercontent.com/freebsd/freebsd-ports/master/textproc/htmldoc/files/patch-htmldoc__http.c
+bug#510: Fix undefined symbols CUPS_SRAND and CUPS_RAND
+https://www.msweet.org/bugs.php?U510
+
+Index: htmldoc-1.8.28/htmldoc/http.c
 ===================================================================
---- ./htmldoc/http.c.orig 2014-01-05 21:41:32.000000000 +0100
-+++ ./htmldoc/http.c  2014-01-28 04:47:07.000000000 +0100
-@@ -1228,6 +1228,8 @@
-   * Using the current time is a dubious random seed, but on some systems
+--- htmldoc-1.8.28.orig/htmldoc/http.c
++++ htmldoc-1.8.28/htmldoc/http.c
+@@ -1229,10 +1229,10 @@ httpInitialize(void)
    * it is the best we can do (on others, this seed isn't even used...)
    */
-+#define CUPS_RAND() arc4random()
-+#define CUPS_SRAND(v) arc4random_stir()
  
-   CUPS_SRAND(time(NULL));
+-  CUPS_SRAND(time(NULL));
++  srand(time(NULL));
+ 
+   for (i = 0; i < sizeof(data); i ++)
+-    data[i] = CUPS_RAND();
++    data[i] = rand();
+ 
+   RAND_seed(data, sizeof(data));
+ #endif /* HAVE_GNUTLS */
