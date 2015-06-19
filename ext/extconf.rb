@@ -11,6 +11,8 @@ Dir.chdir(src_dir) do
   puts "===> Changing to directory: #{src_dir}"
   puts "===> Extracting #{tgz_filename}"
   system "tar xzf #{tgz_filename} --strip-components=1"
+  puts "===> Patching"
+  system "patch -p0 <#{patch_filename}"
   puts "===> Configuring with prefix: #{root}"
   system "./configure --prefix=#{root}"
   puts "===> Building..."
