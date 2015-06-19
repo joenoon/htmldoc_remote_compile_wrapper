@@ -12,7 +12,7 @@ Dir.chdir(src_dir) do
   puts "===> Extracting #{tgz_filename}"
   system "tar xzf #{tgz_filename} --strip-components=1"
   puts "===> Patching"
-  system "patch -p1 <#{patch_filename}"
+  system "patch -p0 <#{patch_filename}"
   puts "===> Configuring with prefix: #{root}"
   system "./configure --prefix=#{root}"
   puts "===> Building..."

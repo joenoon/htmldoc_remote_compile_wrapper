@@ -12,5 +12,5 @@ Gem::Specification.new do |gem|
   gem.extensions    = ['ext/extconf.rb']
   gem.name          = "htmldoc_remote_compile_wrapper"
   gem.require_paths = ["lib"]
-  gem.version       = "0.9"
+  gem.version       = "0.8"
 end
